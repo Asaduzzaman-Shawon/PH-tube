@@ -35,8 +35,8 @@ const displayVedios = (videos) => {
         const profileImg = item.authors[0].profile_picture
         const vedioName = item.title
         const authorsName = item.authors[0].profile_name
-        console.log(authorsName);
         const vedioViews = item.others.views 
+        const verifyIcon = item.authors[0].verified
         const addVedios = document.createElement('div')
         addVedios.classList = " card card-compact m-2 p-2 border"
         addVedios.innerHTML = `
@@ -49,7 +49,7 @@ const displayVedios = (videos) => {
                     </div>
                     <div>
                         <h1 class="font-bold text-[16px]">${vedioName}</h1>
-                        <div class="flex items-center gap-3"><p class="font-semibold">${authorsName}</p><i class="text-blue-700 fa-solid fa-certificate"></i></div>
+                        <div class="flex items-center gap-3"><p class="font-semibold">${authorsName}</p>${verifyIcon == true ? '<img class="w-4" src="https://img.icons8.com/?size=40&id=41816&format=png" alt="">' : ' '}</div>
                         <p>${vedioViews}</p>
                     </div>
               </div>
